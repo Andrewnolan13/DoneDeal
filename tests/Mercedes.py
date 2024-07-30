@@ -8,7 +8,7 @@ sys.path.append(dd_path)
 import pandas as pd
 import plotly.express as px
 from plotly.offline import plot
-import DoneDeal as dd
+import DoneDeal as dd #type: ignore
 
 #scraping
 scraper = dd.CarScraper()
