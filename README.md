@@ -31,10 +31,10 @@ To clone the repository and run the test script, follow these steps:
     >> git clone https://github.com/Andrewnolan13/DoneDeal.git
     ```
 ## Test:
-1. After the repository is cloned, navigate to the `DoneDeal/tests` directory using the following command:
+After the repository is cloned, navigate to the `DoneDeal/tests` directory and run `Mercedes.py`:
     ```
     >> cd DoneDeal/tests
-    >> python mercedes.py
+    >> python Mercedes.py
     ```
-    This will execute the `mercedes.py` script and display a plot in your browser.
+    This will execute the `Mercedes.py` script and display a plot in your browser.
 
