@@ -37,7 +37,8 @@ cd DoneDeal/tests
 python Mercedes.py
 ```
 This will execute the `Mercedes.py` script and display a plot in your browser.
-
+![alt text](media/plot.png)
+<!-- ![alt text](media/plot.html) -->
 ### Built-in Data cleaning functions:
 ```python
 #cleaning/formatting + features
@@ -50,3 +51,5 @@ df=(df.pipe(dd.data_cleaning.assign_lat_lon) # turns string 'x,y' into (float(x)
 df = (df.loc[lambda self:~self.price.apply(dd.data_cleaning.isBsPrice)] # drops prices like 1234,123456,123456789,111111111 etc 
         .loc[lambda self:~self.kilometers.apply(dd.data_cleaning.isBsPrice)])# sometimes the mileage is bs too. sequential digits like 123456 are just so unlikely 
 ```
+
+
