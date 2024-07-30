@@ -37,23 +37,6 @@ After the repository is cloned, navigate to the `DoneDeal/tests` directory and r
 >> python Mercedes.py
 ```
 This will execute the `Mercedes.py` script and display a plot in your browser.
-<<<<<<< HEAD
-=======
-
-
-### Data cleaning:
-```python
-#cleaning/formatting + features
-df:pd.DataFrame = scraper.DataFrame.copy()
-df=df[dd.constants.RECOMMENDED_COLUMNS] #alot of data gets returned, RECOMMENDED_COLUMNS is an optional subset of columns 
-
-df=(df.pipe(dd.data_cleaning.assign_lat_lon) # turns string 'x,y' into (float(x),float(y))
-      .pipe(dd.data_cleaning.assign_mileage) # turns string 'x km' or 'x mi' into float(x) in km (turns mi to km)
-      .pipe(dd.data_cleaning.price_to_float)) # turns string 'abc,def' into float(abcdef)
-df = (df.loc[lambda self:~self.price.apply(dd.data_cleaning.isBsPrice)] # drops prices like 1234,123456,123456789,111111111 etc 
-        .loc[lambda self:~self.kilometers.apply(dd.data_cleaning.isBsPrice)])# sometimes the mileage is bs too, sequential digits like 123456 are just so unlikely 
-```
->>>>>>> fdbf6745d53138f64d33cf2f04bf39c25d6cc556
 
 ### Data cleaning
 ```python
