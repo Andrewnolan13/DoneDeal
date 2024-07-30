@@ -39,7 +39,7 @@ After the repository is cloned, navigate to the `DoneDeal/tests` directory and r
 This will execute the `Mercedes.py` script and display a plot in your browser.
 
 
-### Data cleaning
+### Data cleaning:
 ```python
 #cleaning/formatting + features
 df:pd.DataFrame = scraper.DataFrame.copy()
