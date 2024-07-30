@@ -55,14 +55,14 @@ df = (df.loc[lambda self:~self.price.apply(dd.data_cleaning.isBsPrice)] # drops 
 ```python
 >>> df.head()
 ```
-<style>
+<!-- <style>
   .dataframe {
     font-size: 8px;
   }
-</style>
+</style> -->
 <table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right; font-size: 10px;">
+    <tr style="text-align: right;">  <!--font-size: 10px;-->
       <th></th>
       <th>make</th>
       <th>model</th>
