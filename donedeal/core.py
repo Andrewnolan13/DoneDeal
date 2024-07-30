@@ -69,6 +69,18 @@ class CarScraper:
         if seller not in ['pro','private']:
             raise ValueError("seller must be 'pro' or 'private'")
         self.url += self._format_url_arg(f"sellerType={seller}")
+    def set_arbitrary_kwargs(self,**kwargs:dict)->None:
+        '''
+        Set custom url arguments that aren't already implemtented here.
+        Ensure to play around with donedeal.ie url arguments in browser first to ensure you are using a correct argument.
+
+        examples:
+        scraper = CarScraper()
+        scraper.set_arbitrary_kwargs(sort='priceasc',enginePower_to=150,NCTExpiry_from='now+6M/M')
+        scraper.scrape()
+        '''
+        for k,v in kwargs.items():
+            self.url += self._format_url_arg(f"{k}={v}")
     
     def scrape(self,batch_size:int = 100)->None:
         pageinated_search_urls:list[str] = utils.get_pageinated_urls(self.url)
