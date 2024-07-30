@@ -32,9 +32,9 @@ To clone the repository and run the test script, follow these steps:
     ```
 ## Test:
 After the repository is cloned, navigate to the `DoneDeal/tests` directory and run `Mercedes.py`:
-    ```
-    >> cd DoneDeal/tests
-    >> python Mercedes.py
-    ```
-    This will execute the `Mercedes.py` script and display a plot in your browser.
+```
+>> cd DoneDeal/tests
+>> python Mercedes.py
+```
+This will execute the `Mercedes.py` script and display a plot in your browser.
 
