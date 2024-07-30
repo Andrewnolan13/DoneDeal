@@ -41,5 +41,5 @@ fig = px.scatter_mapbox(df.dropna(subset='price'.split()),
                         hover_data=['make','model','price','kilometers','year','bodyType','transmission','friendlyUrl'],zoom=6)
 fig.update_layout(mapbox_style="carto-darkmatter",height=1000,width=1200)
 plot(fig)
-time.sleep(40) 
+time.sleep(5) 
 os.remove('temp-plot.html') #plotly creates a temp file that we don't want to keep need
