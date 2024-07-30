@@ -21,18 +21,20 @@ scraper.scrape(batch_size=500)
 # Access scraped data
 df = scraper.DataFrame  # pandas.DataFrame
 ```
+## Install:
 To clone the repository and run the test script, follow these steps:
 
-1. Open the command prompt on your computer.
-2. Navigate to the directory where you want to clone the repository. For example, if you want to clone it to your desktop, you can use the following command:
+1. Open the command prompt.
+2. Navigate to the directory where you want to clone the repository. Use the following commands:
     ```
     >> cd C:\path\to\desired\location
     >> git clone https://github.com/Andrewnolan13/DoneDeal.git
     ```
-3. After the repository is cloned, navigate to the `DoneDeal/tests` directory using the following command:
+## Test:
+After the repository is cloned, navigate to the `DoneDeal/tests` directory and run `Mercedes.py`:
     ```
     >> cd DoneDeal/tests
-    >> python mercedes.py
+    >> python Mercedes.py
     ```
-    This will execute the `mercedes.py` script and display a plot results in your browser.
+    This will execute the `Mercedes.py` script and display a plot in your browser.
 
