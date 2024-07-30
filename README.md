@@ -26,15 +26,15 @@ To clone the repository and run the test script, follow these steps:
 
 1. Open the command prompt.
 2. Navigate to the directory where you want to clone the repository. Use the following commands:
-    ```
-    >> cd C:\path\to\desired\location
-    >> git clone https://github.com/Andrewnolan13/DoneDeal.git
-    ```
+```
+cd C:\path\to\desired\location
+git clone https://github.com/Andrewnolan13/DoneDeal.git
+```
 ## Test:
 After the repository is cloned, navigate to the `DoneDeal/tests` directory and run `Mercedes.py`:
 ```
->> cd DoneDeal/tests
->> python Mercedes.py
+cd DoneDeal/tests
+python Mercedes.py
 ```
 This will execute the `Mercedes.py` script and display a plot in your browser.
 
