@@ -1,8 +1,0 @@
-Metadata-Version: 2.1
-Name: donedeal
-Version: 0.1
-Requires-Dist: requests
-Requires-Dist: pandas
-Requires-Dist: numpy
-Requires-Dist: plotly
-Requires-Dist: datetime
