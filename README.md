@@ -1,9 +1,15 @@
-Get car listings from donedeal.ie
+![alt text](media/donedeal-logo-white-footer.svg)
+## Get car listings from donedeal.ie
+<a href = "www.donedeal.ie">DoneDeal</a>
+ is an Irish online marketplace focused on helping buyers and sellers of cars in Ireland. The site lists more cars for sale in Ireland than any other website.
 
-## Usage:
+ This module provides an easy way to scrape Motor listing data from the website. 
+
+
+# Usage
 
 ```python
-import DoneDeal as dd
+import donedeal as dd
 
 # Initialize scraping object
 scraper = dd.CarScraper()
@@ -21,25 +27,45 @@ scraper.scrape(batch_size=500)
 # Access scraped data
 df = scraper.DataFrame  # pandas.DataFrame
 ```
-## Install:
+# Install
 To clone the repository and run the test script, follow these steps:
 
 1. Open the command prompt.
-2. Navigate to the directory where you want to clone the repository. Use the following commands:
+2. Navigate to the directory where you want to clone the repository.
 ```
 cd C:\path\to\desired\location
+```
+3. Clone the repo.
+```
 git clone https://github.com/Andrewnolan13/DoneDeal.git
 ```
-## Test:
+4. Install module on path (so you can import it from anywhere)
+```
+cd Donedeal
+python setup.py install
+```
+
+# Tests
+After the repository and installed, you can perform the following tests in your command line:
+```
+donedeal
+```
+which will return `90593 cars in Ireland`, or something. 
+You can also run the command:
+```
+donedeal_merc_test
+```
+This will execute the `Mercedes.py` script and display a plot in your browser.
+![alt text](media/image.png)
+
+alternatively, if you don't want to install the module on path:
 After the repository is cloned, navigate to the `DoneDeal/tests` directory and run `Mercedes.py`:
 ```
 cd DoneDeal/tests
 python Mercedes.py
 ```
-This will execute the `Mercedes.py` script and display a plot in your browser.
-![alt text](media/plot.png)
 <!-- ![alt text](media/plot.html) -->
-### Built-in Data cleaning functions:
+# Built-in Data cleaning functions
 ```python
 #cleaning/formatting + features
 df:pd.DataFrame = scraper.DataFrame.copy()

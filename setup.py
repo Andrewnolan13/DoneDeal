@@ -13,7 +13,8 @@ setup(
         'datetime'],
     entry_points={
         'console_scripts': [
-            'donedeal = donedeal.__main__:main'
+            'donedeal = donedeal.__main__:main',
+            'donedeal_merc_test = tests.cli_mercedes:main'
         ]
     }
 )
