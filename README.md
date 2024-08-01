@@ -3,7 +3,6 @@
   <img src="media/donedeal-logo-motor.svg" alt="Donedeal cool logo"/>
 </p>
 
-# donedeal
 <a href = "www.donedeal.ie">DoneDeal</a>
  is an Irish online marketplace focused on helping buyers and sellers of cars in Ireland. The site lists more cars for sale in Ireland than any other website.
 
