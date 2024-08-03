@@ -1,6 +1,9 @@
 '''Helpful functions to clean data scraped from DoneDeal'''
 import pandas
 import re
+import datetime as dt
+
+today = dt.datetime.today()
 
 def assign_lat_lon(df:pandas.DataFrame)->pandas.DataFrame:
     '''Assigns latitude and longitude to a dataframe'''
@@ -28,3 +31,38 @@ def isBsPrice(x:float)->bool:
     for idx,ch in enumerate(re.sub(r'\.\d*','',s)):
         bullshit *= int(ch) == idx+1
     return bullshit==1
+def parse_engine(s:str)->float:
+    search = re.search(r'(\d+\.\d+)\s*L',s,re.IGNORECASE)
+    res:str = search.group(1) if search else 'nan'
+    return float(res)
+def parse_enginePower(s:str)->float:
+    search = re.search(r'(\d+)\s*(hp|bhp)',s,re.IGNORECASE)
+    res:str = search.group(1) if search else 'nan'
+    return float(res)
+def parse_acceleration(s:str)->float:
+    search = re.search(r'(\d+\.?\d*)\s*sec',s,re.IGNORECASE)
+    res:str = search.group(1) if search else 'nan'
+    return float(res)
+def parse_NCTExpiry(s:str)->int:
+    dist = dt.datetime.strptime(s,'%b %Y')-today
+    return dist.days
+def encode_strings(column:pandas.Series)->pandas.DataFrame:
+    '''
+    given a pandas Series of strings, returns a dataframe where each unique string is mapped to a column of 1s and 0s
+
+    for example:
+    column = pd.Series(['a','b','a','c','b'])
+    map_strings(column)
+    returns:
+       a  b  c
+    0  1  0  0
+    1  0  1  0
+    2  1  0  0
+    3  0  0  1
+    4  0  1  0
+
+    '''
+    name:str          = column.name
+    unique:list[str]  = column.unique().tolist()
+    print(name)
+    return column.apply(lambda variable:pandas.Series({f'{name}_is_{var}':1 if variable == var else 0 for var in unique}))

@@ -5,7 +5,7 @@ from pandas import DataFrame
 from types import NoneType
 from typing import Literal
 
-from .constants import CARURL
+from .constants import CARURL, DOMAIN
 from . import utils
 
 class CarScraper:
@@ -84,7 +84,7 @@ class CarScraper:
     
     def scrape(self,batch_size:int = 100)->None:
         pageinated_search_urls:list[str] = utils.get_pageinated_urls(self.url)
-        self.hrefs:list[str] = ['https://www.donedeal.ie'+href for href in utils.get_car_hrefs(urls=pageinated_search_urls)]
+        self.hrefs:list[str] = [DOMAIN+href for href in utils.get_car_hrefs(urls=pageinated_search_urls)]
         print("retrieved {0} urls matching your criteria".format(self.hrefs.__len__()))
         self.json:list[dict] = utils.get_json_data_from_ad_urls(self.hrefs,batch_size=batch_size)
         print("retrieved {0} jsons".format(self.json.__len__()))
